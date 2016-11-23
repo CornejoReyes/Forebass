@@ -1,0 +1,13 @@
+<div class="row">
+    <div ng-repeat="group in vm.groups">
+        <div class="col-md-3">
+            <div class="widget clearfix cursor">
+                <div class="pull-right">
+                    <button class="btn btn-primary btn-xs btn-circle" ui-sref="forebass.dashboard.groupedit({id:group.id})"><i class="fa fa-pencil"></i></button>
+                    <button class="btn btn-danger btn-xs btn-circle" ng-click="vm.deleteGroup(group.id)"><i class="fa fa-times"></i></button>
+                </div>
+                <h4 class="note-title cursor" ui-sref="forebass.dashboard.groupsnotes({id:group.id})">{{group.title}}</h4>
+            </div>
+        </div>
+    </div>
+</div>

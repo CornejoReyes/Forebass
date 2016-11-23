@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget">
+            <h4>{{vm.title}}</h4>
+            <div ng-form="form" class="form clearfix">
+                <div class="form-group" ng-if="vm.note.id">
+                    <label class="label-control">ID de la nota</label>
+                    <input ng-model="vm.note.id" type="text" class="form-control" ng-disabled="vm.note.id" required>
+                </div>
+                <div class="form-group">
+                    <label class="label-control">Grupo de la nota</label>
+                    <ui-select theme="bootstrap" ng-model="vm.note.group_id">
+                        <ui-select-match placeholder="Selecciona un grupo (no obligatorio)">
+                            <span ng-bind="$select.selected.title"></span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="group.id as group in (vm.groups | filter: $select.search) track by group.id">
+                            <!-- Estas son las opciones que aparecen en la vista-->
+                            <span ng-bind="group.title"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <div class="form-group">
+                    <label class="label-control">Titulo de la nota</label>
+                    <input ng-model="vm.note.title" type="text" class="form-control" placeholder="Titulo de la nota" required>
+                </div>
+                <div class="form-group">
+                    <label class="label-control">Cuerpo de la nota</label>
+                    <textarea ng-model="vm.note.description" type="text" class="form-control" placeholder="Cuerpo de la nota" required></textarea>
+                </div>
+                <div class="form-group">
+                        <button ng-disabled="form.$invalid" ng-if="!vm.note.id" ng-click="vm.createNote(vm.note)" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Crear nota</button>
+                        <button ng-disabled="form.$invalid" ng-if="vm.note.id" ng-click="vm.updateNote(vm.note)" class="btn btn-primary btn-block"><i class="fa fa-refresh"></i> Actualizar nota</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

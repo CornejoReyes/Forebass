@@ -1,7 +1,7 @@
 'use strict'
 
 class LoginCtrl
-    constructor: (session, settings)->
+    constructor: ($state,session, settings,locker,toastr)->
         vm = this
         vm.appName = settings.appName
         vm.user =
@@ -11,11 +11,24 @@ class LoginCtrl
             vm.user.rol = 1
             session.login(vm.user)
             .then((res)->
-                vm.show = res
+                $state.go 'forebass.dashboard.general'
+                toastr.info res.msg, 'Éxito'
             )
             .catch((err)->
-                vm.show = err
+                toastr.error err, 'Error'
             )
+
+        vm.register = ()->
+            vm.user.rol = 1
+            session.register(vm.user)
+            .then (res)->
+                toastr.success res.msg, 'Éxito'
+                vm.user =
+                    name: null
+                    lastname: null
+                    username: null
+                    password: null
+                    email: null
 
 angular.module 'forebassApp'
     .controller 'LoginCtrl', LoginCtrl
@@ -26,4 +39,9 @@ angular.module 'forebassApp'
                 controller: 'LoginCtrl as vm'
                 templateUrl: 'views/login.html'
             }
+            .state 'forebass.register',
+                url: 'register'
+                controller: 'LoginCtrl as vm'
+                templateUrl: 'views/register.html'
+
         )

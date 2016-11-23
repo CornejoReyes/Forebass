@@ -1,0 +1,56 @@
+$sidebar-color: #1f709e;
+$sidebar-width: 300px;
+.dashboard{
+    .sidebar{
+        position:fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        width:$sidebar-width;
+        background: $sidebar-color;
+        border-right: 2px solid darken($sidebar-color, 10%);
+        .logo{
+            color:white;
+            font-family: 'Indie Flower';
+            font-size:40px;
+            text-align:center;
+            margin-top:10px;
+            padding-bottom:10px;
+            border-bottom: 2px solid darken($sidebar-color, 10%);
+            img{
+                width:60px;
+            }
+        }
+        .controls{
+            .controls-menu{
+                padding:0;
+                .controls-menu-item{
+                    list-style: none;
+                    width: $sidebar-width;
+                    &:hover{
+                        background:darken($sidebar-color, 5%);
+                    }
+                    a{
+                        color:white;
+                        display: block;
+                        height:100%;
+                        padding: 6px 12px;
+                        cursor:pointer;
+                        &:hover,&:focus,&:active{
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .content{
+        margin-left: $sidebar-width;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: calc(100% - $sidebar-width);
+        .row{
+            margin-top:15px;
+        }
+    }
+}

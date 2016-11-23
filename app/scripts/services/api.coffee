@@ -27,8 +27,8 @@ angular.module('forebassApp').factory 'API', ($http, $q, settings) ->
             # $rootScope.$$phase || $rootScope.$apply();
         ).catch (err) ->
             console.log err
-            if err.data and err.data.Mensaje
-                $q.reject err.data.Mensaje
+            if err.data and err.data.msg
+                $q.reject err.data.msg
             else if err.status == -1
                 $q.reject 'Sin conexión a los servicios'
             else

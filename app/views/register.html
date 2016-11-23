@@ -1,0 +1,60 @@
+<div class="login">
+    <div class="login-container">
+        <div class="app-name">
+            <img src="images/meteoro.png" alt=""> {{vm.appName}}
+        </div>
+        <div class="login-form form-horizontal" ng-form="form">
+            <div class="form-group">
+                <label for="" class="control-label sr-only">Nombre</label>
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"> <i class="fa fa-user"></i> </span>
+                        <input type="text" class="form-control" ng-model="vm.user.name" placeholder="Nombre(s)">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label sr-only">Apellido</label>
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"> <i class="fa fa-user"></i> </span>
+                        <input type="text" class="form-control" ng-model="vm.user.lastname" placeholder="Apellido">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label sr-only">Username</label>
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"> <i class="fa fa-user"></i> </span>
+                        <input type="text" class="form-control" ng-model="vm.user.username" placeholder="Username">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label sr-only">Password</label>
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        <input type="password" class="form-control" ng-model="vm.user.password" placeholder="Password">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label sr-only">E-mail</label>
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="email" class="form-control" ng-model="vm.user.email" placeholder="Email">
+                    </div>
+                </div>
+            </div>
+            <div class="from-group">
+                <button class="btn btn-primary btn-block" ng-click="vm.register()"><i class="fa fa-sign-in"></i> Registro</button>
+            </div>
+            <div class="from-group">
+                <button class="btn btn-success btn-block" ui-sref="forebass.home"><i class="fa fa-homen"></i> Home</button>
+            </div>
+        </div>
+    </div>
+</div>

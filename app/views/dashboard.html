@@ -1,0 +1,40 @@
+<div class="dashboard">
+    <div class="sidebar">
+        <div class="logo">
+            <img src="images/meteoro.png" alt="">
+
+        </div>
+        <div class="controls">
+            <ul class="controls-menu">
+                <li class="controls-menu-item">
+                    <a ui-sref="forebass.dashboard.general">
+                        <i class="fa fa-desktop"></i> Vista General
+                    </a>
+                </li>
+                <li class="controls-menu-item">
+                    <a ui-sref="forebass.dashboard.notenew">
+                        <i class="fa fa-file-text"></i> Crear Nota
+                    </a>
+                </li>
+                <li class="controls-menu-item">
+                    <a ui-sref="forebass.dashboard.groupnew">
+                        <i class="fa fa-folder"></i> Crear Grupo
+                    </a>
+                </li>
+                <li class="controls-menu-item">
+                    <a ui-sref="forebass.dashboard.groups">
+                        <i class="fa fa-folder-open"></i> Mis Grupos
+                    </a>
+                </li>
+                <li class="controls-menu-item">
+                    <a ng-click="vm.logout()">
+                        <i class="fa fa-power-off"></i> Cerrar sesión
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div ui-view></div>
+    </div>
+</div>
